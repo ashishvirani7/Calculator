@@ -1,0 +1,12 @@
+{
+  "name": "Calculator",
+  "version": "1.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "ejs": "*"
+  }
+}
