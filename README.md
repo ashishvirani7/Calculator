@@ -1,2 +1,2 @@
 # Calculator
-Calculator Web App using React and Node
+Calculator Web App using Node
