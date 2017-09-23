@@ -1,0 +1,194 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-sm-5 col-md-5 col-lg-5"
+                style="margin-top: 10%;">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Calculator</div>
+                <div class="panel-body">
+
+                    <form class="form-horizontal" role="form" method="post" id="myForm" action="calculate">
+
+                        <%
+                        var value = value;
+                        var ip1 = ip1;
+                        var ip2 = ip2;
+                        var op=op;
+                        var message = message;
+                        %>
+
+
+                        <input type="text" class="form-control" placeholder="answer" id="output"  value=
+                            <%
+                            if(message=="non-number input"){ %>
+
+                            <%= "Enter" +"Both" +"Numbers" %>
+
+                            <%
+                            }else if(message=="success"){ %>
+                            <%= value %>
+                            <% } %>
+                        >
+
+
+                        <div class="col-xs-12" style="height:2%;"></div>
+
+                        <div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                            <input type="text" required= "required" class="form-control" name="input1"
+                                   id="operand1" placeholder="Operand 1" value=
+                                   <%
+                                   if(ip1!==""){ %>
+                                   <%= ip1 %>
+                                   <% } %>
+                            >
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" required= "required" class="form-control" name="input2"
+                                       id="operand2" placeholder="Operand 2" value=
+                                       <%
+                                       if(ip2!==""){ %>
+                                       <%= ip2 %>
+                                       <% } %>
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12" style="height:2%;"></div>
+
+
+                        <div>
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <button type="submit" name="operation" value="add" class=
+
+                                <%
+                                if(op=="add"){ %>
+                                <%= "buttonGreen" %>
+                                <%
+                                }else { %>
+                                <%= "buttonBlue" %>
+                                <% } %>
+                                >+</button>
+                            </div>
+
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <button type="submit" name="operation" value="subtract" class=
+
+                                <%
+                                if(op=="subtract"){ %>
+                                <%= "buttonGreen" %>
+                                <%
+                                }else{ %>
+                                <%= "buttonBlue" %>
+                                <% } %>
+
+                                >-</button>
+                            </div>
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <button type="submit" name="operation" value="multiply" class=
+
+                                <%
+                                if(op=="multiply"){ %>
+                                <%= "buttonGreen" %>
+                                <%
+                                }else{ %>
+                                <%= "buttonBlue" %>
+                                <% } %>
+
+                                >*</button>
+                            </div>
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <button type="submit" name="operation" value="divide" class=
+
+                                <%
+                                if(op=="divide"){ %>
+                                <%= "buttonGreen" %>
+                                <%
+                                }else{ %>
+                                <%= "buttonBlue" %>
+                                <% } %>
+
+                                >/</button>
+                            </div>
+
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <button type="submit" name="operation" value="clear" class=
+
+                                <%
+                                if(op=="clear"){ %>
+                                <%= "btn btn-primary buttonGreen" %>
+                                <%
+                                }else{ %>
+                                <%= "buttonBlack" %>
+                                <% } %>
+
+                                >CLR</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+<style>
+    .buttonGreen {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 4px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 40px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .buttonBlue {
+        background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .buttonBlack {
+        background-color: #5D6D7E;
+        border: none;
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        margin: 4px 2px;
+        cursor: pointer;
+
+    }
+</style>
